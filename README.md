@@ -8,6 +8,7 @@
 - Windows OS
   
 ### Build Instructions
+- Install [Python 3.x](https://www.python.org/downloads/) and [pip](https://pip.pypa.io/en/stable/installing/#do-i-need-to-install-pip)
 
 - Install `pyinstaller` using the following command in Command Prompt
     ```
@@ -98,3 +99,5 @@
 - PorterStemmer - For stemming the index tokens/terms
 
 - List of Stop Words: http://xpo6.com/download-stop-word-list/
+
+Source Code Reference: http://www.ardendertat.com/2012/01/11/implementing-search-engines/ 
