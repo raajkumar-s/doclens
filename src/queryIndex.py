@@ -1,11 +1,12 @@
 import sys
 import re
 import copy
+import tokenizer
+import infixQueryEvaluator
 from functools import reduce 
 from porterStemmer import PorterStemmer
 
 porter = PorterStemmer()
-
 
 class QueryIndex:
 
@@ -170,11 +171,22 @@ class QueryIndex:
 
         return result
 
-    def query(self, q):
-        qt = self.queryType(q)
+    def query_token(self, token):
+        qt = self.queryType(token)
         if qt == 'OWQ':
-            return self.owq(q)
+            return self.owq(token)
         elif qt == 'FTQ':
-            return self.ftq(q)
+            return self.ftq(token)
         elif qt == 'PQ':
-            return self.pq(q)
+            return self.pq(token)
+
+    def query(self, q, file_names):
+        results = []
+        tokens = tokenizer.get_tokens(q)
+        for token in tokens:
+            if token == '&' or token == '|' or token == '!':
+                results.append(token)
+            else:
+                results.append(self.query_token(token))
+        
+        return infixQueryEvaluator.evaluate_querylist(results, file_names)

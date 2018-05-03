@@ -70,6 +70,18 @@
       ```
       "you are awesome"
       ```
+  4) Boolean conjunctive query
+
+      ```
+      you & awesome
+      ```
+        - Supported Boolean Operators
+            ```
+                & -> Logical AND
+                | -> Logical OR
+                ! -> Logo=ical NOT
+            ```
+        - If query is not properly formatted with boolean operators, searchh engine will do it's best to get matching results
 
 
 ### Assumptions
@@ -77,13 +89,18 @@
 - Document contains only plain text (No image, table, etc.,)
 
 - Text is only in English Language
-  
+
+- Boolean queries are executed in left to right direction  
 
 ### Limitations
 
 - Only .docx files are supported
 
 - If document contains multimedia, they are ignored
+
+- Results are not sorted in alphabetical order
+
+- Grouping of boolean query is not possible currently. Ex: !(A & B) is not possible.
 
 - Supports only Windows platform. For other platforms, directly execute the source code using python (Python 3.x should be installed)
 

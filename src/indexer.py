@@ -15,7 +15,10 @@ porter = PorterStemmer()
 
 
 class Indexer:
-
+    '''
+    Parses the file content and creates indexes after stemming.
+    This creates indexes with posting list which includes document frequency and term position 
+    '''
     def __init__(self):
         '''
         Constructor

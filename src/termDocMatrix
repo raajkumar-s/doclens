@@ -1,0 +1,25 @@
+'''
+import collections
+
+d = collections.defaultdict(dict)
+
+
+{
+  term1: {
+    1: [doc1, doc2, doc3, doc4, doc7],
+    0: []
+  }
+}
+
+LEGEND:
+1s -> List of documents which contains the term
+0s -> List of documents which doesn't contain the term
+ALL -> List of all available documents
+
+- term1 & term2 -> Fetch all 1s of term1 and term2 and perform an INTERSECTION on it
+- term1 | term2 -> Fetch all 1s of term1 and term2 and perform an UNION on it
+- term1 ! term2 -> Fetch all 1s of term1 and term2, perform DIFFERENCE between term2 1s and ALL which will give 0s. Now perform INTERSECTION on term1 1s and term2 0s
+                   Alternatively we can store 0s in the data structure to avoid performing DIFFERENCE between term2 1s and ALL
+
+#If query is not properly formatted, searchh engine will do it's best to get matching results
+'''

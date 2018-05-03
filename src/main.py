@@ -41,18 +41,19 @@ i = Indexer()
 i.createIndex(doc_coll_path, file_names)
 # Indexing completed
 
-# Read input query
+# Start querying the search engine
 q = QueryIndex()
-print('\n\nHello,\nEnter your search query and hit Enter key. Wrap your query in "" for searching a phrase.\nIf you want to exit, just hit Enter key')
+# Read input query
+print('\n\nHello,\nEnter your search query and hit Enter key. Wrap your query in "" for searching a phrase.\nIf you want to exit, just hit Enter key!')
 while True:
-  query = input('\nYour search query: ')
+  query = input('\nEnter your search query: ')
   # q = sys.stdin.readline()
   if query == '':
     print('No input provided. Exiting the program.')
     print('\nBye, Have a great day!')
     break
   else:
-    resultList = q.query(query)
+    resultList = q.query(query, file_names)
     length = len(resultList)
     if length > 0:
       print('Showing ' + str(length) + ' results for "' + query + '"')
