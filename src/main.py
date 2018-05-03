@@ -13,7 +13,6 @@ elif args_len == 2:
 else:
   doc_coll_path = '../docs'  # Default set of doc collection
 
-print(doc_coll_path)
 if not os.path.exists(doc_coll_path):
   print(doc_coll_path + ' does not exist. Exiting application.')
   sys.exit()
