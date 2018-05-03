@@ -1,5 +1,6 @@
 import re
 import gc
+import os
 from collections import defaultdict
 from array import array
 
@@ -49,7 +50,7 @@ class Indexer:
         if file_name == None or file_path == None:
             return {}
 
-        doc_text = reader.get_docx_text(file_path + file_name)
+        doc_text = reader.get_docx_text(os.path.join(file_path, file_name))
 
         if doc_text == None:
             return {}
