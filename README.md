@@ -1,12 +1,13 @@
 ## :star2: doclens - :mag: search engine for docx files :star2:
-  
+
+#### Note: Ranking based search result implementation is in 'ranking' branch of this repository
 
 ### Environment
 
 - Python 3.x
 
 - Windows OS
-  
+
 ### Build Instructions
 - Install [Python 3.x](https://www.python.org/downloads/) and [pip](https://pip.pypa.io/en/stable/installing/#do-i-need-to-install-pip)
 
